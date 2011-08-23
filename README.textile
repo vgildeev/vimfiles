@@ -223,3 +223,58 @@ h3. Surround
   _({ Hello } world!)_
 * Revert to the original text: *ds{ds)*
   _Hello world!_
+
+h3. Walking through the splits
+* Use *SHIFT-UP/DOWN/RIGHT/LEFT* for walking through splits in visual mode
+
+h3. Transposing
+* Use *CTRL-UP/DOWN* for moving current line or visual selection
+* 5<C-Up> would move the current line (or visual selection) 5 lines up.
+
+h3. Find&Replace
+* The *:substitute* command searches for a text pattern, and replaces it with a text string.
+* <code>:%s/foo/bar/g</code> Find each occurrence of 'foo', and replace it with 'bar'.
+:%s/foo/bar/gc
+Change each 'foo' to 'bar', but ask for confirmation first.
+:%s/\<foo\>/bar/gc
+Change only whole words exactly matching 'foo' to 'bar'; ask for confirmation.
+:%s/foo/bar/gci
+Change each 'foo' (case insensitive) to 'bar'; ask for confirmation.
+:%s/foo/bar/gcI
+Change each 'foo' (case sensitive) to 'bar'; ask for confirmation.
+The g flag means global – each occurrence in the line is changed, rather than just the first.
+Search range:
+:s/foo/bar/g
+Change each 'foo' to 'bar' in the current line.
+:%s/foo/bar/g
+Change each 'foo' to 'bar' in all lines.
+:5,12s/foo/bar/g
+Change each 'foo' to 'bar' for all lines from line 5 to line 12 inclusive.
+:'a,'bs/foo/bar/g
+Change each 'foo' to 'bar' for all lines from mark a to mark b inclusive.
+:.,$s/foo/bar/g
+Change each 'foo' to 'bar' for all lines from the current line (.) to the last line ($) inclusive.
+:.,+2s/foo/bar/g
+Change each 'foo' to 'bar' for the current line (.) and the two next lines (+2).
+:%s/foo/bar/g
+Equivalent to :1,$s/foo/bar/g (change all lines).
+:g/^baz/s/foo/bar/g
+Change each 'foo' to 'bar' in each line starting with 'baz'.
+When searching:
+., *, \, [, ], ^, and $ are metacharacters.
++, ?, |, {, }, (, and ) must be escaped to use their special function.
+\/ is / (use backslash + forward slash to search for forward slash)
+\t is tab, \s is whitespace
+\n is newline, \r is CR (carriage return = Ctrl-M = ^M)
+\{#\} is used for repetition. /foo.\{2\} will match foo and the two following characters. The \ is not required on the closing } so /foo.\{2} will do the same thing.
+\(foo\) makes a backreference to foo. Parenthesis without escapes are literally matched. Here the \ is required for the closing \).
+When replacing:
+\r is newline, \n is a null byte (0x00).
+\& is ampersand (& is the text that matches the search pattern).
+\1 inserts the text of the first backreference. \2 inserts the second backreference, and so on.
+You can use other delimiters with substitute:
+:s#http://www.example.com/index.html#http://example.com/#
+Save typing by using \zs and \ze to set the start and end of a pattern. For example, instead of:
+:s/Copyright 2007 All Rights Reserved/Copyright 2008 All Rights Reserved/
+Use:
+:s/Copyright \zs2007\ze All Rights Reserved/2008/
