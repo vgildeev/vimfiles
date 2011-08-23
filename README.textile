@@ -40,10 +40,10 @@ h1. Bundled Plugins
 h1. Usage
 
 Troubleshoot: Because of the large amount of submodules, if you ever have any
-trouble after pulling from the repository, it will be easier to just back up 
+trouble after pulling from the repository, it will be easier to just back up
 your old .vim folder and just git clone a new version.
 
-Clone this repo into your home directory either as .vim (linux/mac) or 
+Clone this repo into your home directory either as .vim (linux/mac) or
 vimfiles (Windows). Such as:
 
 <pre><code>
@@ -74,7 +74,7 @@ source ~/vimfiles/vimrc
 This way you can override the default configuration by adding your own inside
 this file.
 
-You should also create a new <tt>.gvimrc</tt> file in your home directory. You can do 
+You should also create a new <tt>.gvimrc</tt> file in your home directory. You can do
 it on Linux/Mac like this:
 
 <pre><code>
@@ -126,8 +126,8 @@ look for Luis Lavena's latest Ruby Installer (http://rubyforge.org/projects/ruby
 
 h1. IMPORTANT: Command-T
 
-The latest version replaces the old Fuzzy Finder with a new one called 
-"Command-T" form wincent.com. I've replaced the old "Command-T" key 
+The latest version replaces the old Fuzzy Finder with a new one called
+"Command-T" form wincent.com. I've replaced the old "Command-T" key
 binding that used to open new tabs and assigned it to this new plugin
 so it behaves the same as Textmate.
 
@@ -141,7 +141,7 @@ ruby extconf.rb
 make
 </code></pre>
 
-This means that you need to have your Ruby source files and GCC also 
+This means that you need to have your Ruby source files and GCC also
 installed. A binary for Windows is already bundled so it should just
 work. I've also included a binary compiled for Ruby Enterprise Edition,
 but if you are using other Ruby distros, you will need to recompile.
@@ -191,3 +191,42 @@ h2. Credits
 * All the cool plugins for Rails, Cucumber and more: @timpope
 * Great Command-T plugin by: Wincent
 * Hacks and some snippets: @akitaonrails
+
+h2. Usable Things
+
+h3. NERD Commenter
+
+* *,cc* - Comment out the current line or text selected in visual mode.
+* *,cm* - Comments the given lines using only one set of multipart delimiters.
+* *,cu* - Uncomments the selected line(s).
+* *,c<space>* - Toggles the comment state of the selected line(s). If the topmost selected
+line is commented, all selected lines are uncommented and vice versa.
+* *,c$* - Comments the current line from the cursor to the end of line.
+
+h3. Surround
+
+* Press *cs"'* (that's c, s, double quote, single quote) inside
+  _"Hello world!"_
+  to change it to
+  _'Hello world!' _
+* Now press *cs'<q>* to change it to
+  _<q>Hello world!</q>_
+* To go full circle, press *cst"* to get
+  _"Hello world!"_
+  To remove the delimiters entirely, press *ds"* .
+  _Hello world!_
+  Now with the cursor on "Hello", press *ysiw]* (*iw* is a text object).
+  _[Hello] world!_
+* Let's make that braces and add some space (use "}" instead of "{" for no space): *cs]{*
+  _{ Hello } world!_
+* Now wrap the entire line in parentheses with *yssb* or *yss)* .
+  _({ Hello } world!)_
+* Revert to the original text: *ds{ds)*
+  _Hello world!_
+* Emphasize hello: *ysiw??<em>??*
+  _<em>Hello</em> world!_
+* Finally, let's try out visual mode. Press a capital V (for linewise visual mode)
+  followed by S<p class="important">.
+  pre._<p class="important">_
+  pre. <em>Hello</em> world!_
+  pre.</p><pre>
