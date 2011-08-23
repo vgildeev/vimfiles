@@ -284,3 +284,13 @@ h3. Select to end of line
 
 * *v SHIFT-4* in visual mode.
 
+h3. AutoComplPop
+* "AutoComplPop":http://www.vim.org/scripts/script.php?script_id=1879 - With this plugin, your vim comes to automatically opens popup menu for completions when you enter characters or move the cursor in Insert mode. It won't prevent you continuing entering characters.
+
+h3. Rails.Vim
+
+* <code>:Rextract {file}</code> - make a partial from visual selection.
+* <code>:Rview</code> - go to *_view file_*.
+* <code>:Rmodel</code> - go to *_model_*.
+* <code>:Rcontroller</code> - go to *_controller_*.
+
