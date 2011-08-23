@@ -47,7 +47,7 @@ Clone this repo into your home directory either as .vim (linux/mac) or
 vimfiles (Windows). Such as:
 
 <pre><code>
-git clone git://github.com/akitaonrails/vimfiles.git ~/.vim
+git clone git://github.com/vgildeev/vimfiles.git ~/.vim
 </pre></code>
 
 Then 'cd' into the repo and run this to get the snippets submodule:
@@ -199,7 +199,7 @@ h3. NERD Commenter
 * *,cc* - Comment out the current line or text selected in visual mode.
 * *,cm* - Comments the given lines using only one set of multipart delimiters.
 * *,cu* - Uncomments the selected line(s).
-* *,c<space>* - Toggles the comment state of the selected line(s). If the topmost selected
+* *,c[space]* - Toggles the comment state of the selected line(s). If the topmost selected
 line is commented, all selected lines are uncommented and vice versa.
 * *,c$* - Comments the current line from the cursor to the end of line.
 
@@ -208,7 +208,7 @@ h3. Surround
 * Press *cs"'* (that's c, s, double quote, single quote) inside
   _"Hello world!"_
   to change it to
-  _'Hello world!' _
+  _'Hello world!'_
 * Now press *cs'<q>* to change it to
   _<q>Hello world!</q>_
 * To go full circle, press *cst"* to get
