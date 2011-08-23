@@ -294,3 +294,25 @@ h3. Rails.Vim
 * <code>:Rmodel</code> - go to *_model_*.
 * <code>:Rcontroller</code> - go to *_controller_*.
 
+h3. File convertation
+
+* Convert from dos/unix to unix
+** <code>:update</code> Save any changes.
+** <code>:e ++ff=dos</code> Edit file again, using dos file format ('fileformats' is ignored).
+** <code>:setlocal ff=unix</code> This buffer will use LF-only line endings when written.
+** <code>:w</code> Write buffer using unix (LF-only) line endings.
+** In the above, replacing <code>:set ff=unix</code> with <code>:set ff=mac</code> would write the file with mac (CR-only) line endings. Or, if it was a mac file to start with, you would use <code>:e ++ff=mac</code> to read the file correctly, so you could convert the line endings to unix or dos.
+
+* Convert from dos/unix to dos
+** <code>:update</code> Save any changes.
+** <code>:e ++ff=dos</code> Edit file again, using dos file format ('fileformats' is ignored).
+** <code>:w</code> Write buffer using dos (CRLF) line endings.
+
+h3. Close all splits except active
+
+* <code>:only</code>
+
+h3. Close active tab with all splits
+
+* <code>:tabclose</code>
+
