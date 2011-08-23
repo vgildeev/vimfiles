@@ -223,10 +223,3 @@ h3. Surround
   _({ Hello } world!)_
 * Revert to the original text: *ds{ds)*
   _Hello world!_
-* Emphasize hello: *ysiw??<em>??*
-  _<em>Hello</em> world!_
-* Finally, let's try out visual mode. Press a capital V (for linewise visual mode)
-  followed by S<p class="important">.
-  pre._<p class="important">_
-  pre. <em>Hello</em> world!_
-  pre.</p><pre>
