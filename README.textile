@@ -285,6 +285,7 @@ h3. Select to end of line
 * *v SHIFT-4* in visual mode.
 
 h3. AutoComplPop
+
 * "AutoComplPop":http://www.vim.org/scripts/script.php?script_id=1879 - With this plugin, your vim comes to automatically opens popup menu for completions when you enter characters or move the cursor in Insert mode. It won't prevent you continuing entering characters.
 
 h3. Rails.Vim
@@ -316,3 +317,12 @@ h3. Close active tab with all splits
 
 * <code>:tabclose</code>
 
+h3. TagList
+
+* "TagList":http://www.vim.org/scripts/script.php?script_id=273 - The "Tag List" plugin is a source code browser plugin for Vim and provides an overview of the structure of source code files and allows you to efficiently browse through source code files for different programming languages.
+** <code>:TlistToggle</code> - command to open/close the taglist window.
+
+h3. Unite tabs in splits and vice versa
+
+* <code>:sball</code>, <code>:sb</code> - Split all buffers;
+* <code>:tab ball</code> - vice versa.
