@@ -225,13 +225,16 @@ h3. Surround
   _Hello world!_
 
 h3. Walking through the splits
+
 * Use *SHIFT-UP/DOWN/RIGHT/LEFT* for walking through splits in visual mode
 
 h3. Transposing
+
 * Use *CTRL-UP/DOWN* for moving current line or visual selection
 * 5<C-Up> would move the current line (or visual selection) 5 lines up.
 
 h3. Find&Replace
+
 * The *:substitute* command searches for a text pattern, and replaces it with a text string.
 * <code>:%s/foo/bar/g</code> Find each occurrence of 'foo', and replace it with 'bar'.
 * <code>:%s/foo/bar/gc</code> Change each 'foo' to 'bar', but ask for confirmation first.
@@ -262,3 +265,22 @@ When replacing:
 * *\1* inserts the text of the first backreference. *\2* inserts the second backreference, and so on.
 * You can use other delimiters with substitute: <code>:s#http://www.example.com/index.html#http://example.com/#</code>
 * Save typing by using *\zs* and *\ze* to set the start and end of a pattern. For example, instead of: <code>:s/Copyright 2007 All Rights Reserved/Copyright 2008 All Rights Reserved/</code> use: <code>:s/Copyright \zs2007\ze All Rights Reserved/2008/</code>
+
+h3. Folding
+
+* <code>:set foldenable</code> enable folding if it disable
+* *zo* - open fold;
+* *zO* - close folds recursively;
+* *zc* - close fold;
+* *zC* - close fold recursively;
+* *za* - if fold opened - close, and vice versa;
+* *zA* - same as *za*, but recursively;
+* *zr* - decrease closed folds level (FOLDLEVEL+=1);
+* *zR* - open all folds;
+* *zm* - increase closed folds level (FOLDLEVEL-=1);
+* *zM* - close all folds.
+
+h3. Select to end of line
+
+* *v SHIFT-4* in visual mode.
+
