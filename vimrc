@@ -1,12 +1,19 @@
 "avoiding annoying CSApprox warning message
 let g:CSApprox_verbose_level = 0
 
+"Force to use powerline fonts"
+let g:airline_powerline_fonts = 1
+
+"Show buffers when only 1 tab is active"
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#branch#enabled=1
+
 "necessary on some Linux distros for pathogen to properly load bundles
 filetype on
 filetype off
 
 "load pathogen managed plugins
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 
 "Use Vim settings, rather then Vi settings (much better!).
 "This must be first, because it changes other options as a side effect.
@@ -226,14 +233,16 @@ if has("gui_running")
     "tell the term has 256 colors
     set t_Co=256
 
-    colorscheme railscasts
+    set background=dark
+    colorscheme solarized
     set guitablabel=%M%t
     set lines=40
     set columns=115
 
     if has("gui_gnome")
         set term=gnome-256color
-        colorscheme railscasts
+        set background=dark
+        colorscheme solarized
         set guifont=Monospace\ Bold\ 12
     endif
 
@@ -257,7 +266,8 @@ else
     "set railscasts colorscheme when running vim in gnome terminal
     if $COLORTERM == 'gnome-terminal'
         set term=gnome-256color
-        colorscheme railscasts
+        set background=dark
+        colorscheme solarized
     else
         colorscheme default
     endif
