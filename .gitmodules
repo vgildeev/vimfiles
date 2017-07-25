@@ -2,6 +2,10 @@
 	path = snippets
 	url = git://github.com/akitaonrails/snipmate-snippets.git
   ignore = dirty
+[submodule "bundle/AutoComplPop"]
+	path = bundle/AutoComplPop
+	url = git://github.com/vim-scripts/AutoComplPop.git
+  ignore = dirty
 [submodule "bundle/rails"]
 	path = bundle/rails
 	url = git://github.com/tpope/vim-rails.git
@@ -119,3 +123,18 @@
 [submodule "plugin/gist-vim"]
 	path = plugin/gist-vim
 	url = http://github.com/mattn/gist-vim.git
+[submodule "bundle/vim-airline"]
+	path = bundle/vim-airline
+	url = git://github.com/vim-airline/vim-airline.git
+[submodule "bundle/vim-fugitive"]
+	path = bundle/vim-fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "bundle/vim-gitgutter"]
+	path = bundle/vim-gitgutter
+	url = git://github.com/airblade/vim-gitgutter.git
+[submodule "bundle/vim-signify"]
+	path = bundle/vim-signify
+	url = git://github.com/mhinz/vim-signify.git
+[submodule "bundle/vim-slim"]
+	path = bundle/vim-slim
+	url = git://github.com/slim-template/vim-slim.git
